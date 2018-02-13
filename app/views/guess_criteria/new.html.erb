@@ -1,0 +1,33 @@
+
+<center>
+<%= form_with model: @guess_criterium, local: true do |form| %>
+
+<% if @guess_criterium.errors.any? %>
+  <div id="error_explanation">
+    <b><%= pluralize(@guess_criterium.errors.count, "error") %> prohibited me from guessing:</b>
+    <ul>
+      <% @guess_criterium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table width="300">
+  <tr>
+    <td colspan="2">Please enter your height and weight. Then I will guess if you prefer cats or dogs.</td>
+  </tr>
+  <tr>
+    <td align="right"><%= form.label :height %></td>
+    <td><%= form.text_field :height %></td>
+  </tr>
+  <tr>
+    <td align="right"><%= form.label :weight %></td>
+    <td><%= form.text_field :weight %></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><%= form.submit value='Guess Now!'%></td>
+  </tr>
+</table>
+</center>
+<% end %>

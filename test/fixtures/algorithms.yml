@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: RandomGuess
+  weight: 10
+
+two:
+  name: ManhattanDist
+  weight: 90

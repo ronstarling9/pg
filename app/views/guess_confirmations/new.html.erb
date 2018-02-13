@@ -1,0 +1,35 @@
+
+<center>
+<%= form_with model: @guess_confirmation, local: true do |form| %>
+
+<% if @guess_confirmation.errors.any? %>
+  <div id="error_explanation">
+    <b><%= pluralize(@guess_confirmation.errors.count, "error") %> prohibited me from saving.</b>
+    <ul>
+      <% @guess_confirmation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table width="300">
+  <tr>
+    <td>Well, based on your height of <%=@guess_confirmation.height%> inches and weight of <%=@guess_confirmation.weight%> pounds, I think you prefer:</td>
+  </tr>
+  <tr>
+    <td align="center"><p><%=guess_text(@guess_confirmation.guess)%></p></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <p>So...did I guess correctly? <%= form.radio_button :is_correct, 'true'%>Yes <%= form.radio_button :is_correct, 'false'%>No</p>
+      <%= form.submit value='Confirm!'%>
+    </td>
+  </tr>
+</table>
+<%= form.hidden_field :guess %>
+<%= form.hidden_field :algorithm %>
+<%= form.hidden_field :height %>
+<%= form.hidden_field :weight %>
+<% end %>
+</center>

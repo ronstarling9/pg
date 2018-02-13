@@ -1,0 +1,3 @@
+module GuessConfirmationsHelper
+
+end

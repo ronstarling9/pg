@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  height: 1.5
+  weight: 1.5
+  algorithm: MyString
+  is_correct: false
+  guess: MyString
+
+two:
+  height: 1.5
+  weight: 1.5
+  algorithm: MyString
+  is_correct: false
+  guess: MyString
